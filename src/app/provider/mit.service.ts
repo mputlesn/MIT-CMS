@@ -8,6 +8,15 @@ declare var firebase;
 })
 export class MitService {
 
+  birthdayMessageArray = [] ;
+  weddingMessageArray = [] ;
+  babyShowerMessageArray = [] ;
+  graduation = []
+  anniversary = [] ;
+  newJob = [] ;
+  general = [] ;
+  thinkingofyou = [] ;
+
   constructor() { }
 
   register(email, password, name) {
@@ -59,6 +68,18 @@ export class MitService {
   
   }
 
+  saveMessage(message, occassionType){
+    
+    firebase.database().ref('category/' + occassionType).push({
+
+      message :message ,
+      occasion:occassionType ,
+   
+
+    });
+
+  }
+
   loginx(email , password){
     return firebase.auth().signInWithEmailAndPassword(email, password) ;
   }
@@ -90,5 +111,348 @@ export class MitService {
 
     });
   }
+
+
+delete(occassionType , key){
+  return new Promise((resolve, reject)=>{
+  
+    console.log("category/"+occassionType+"/"+key);
+    console.log("category/Wedding/-LYCR3t7ry_45iWHHj1u");
+    
+    
+    firebase.database().ref("category/"+occassionType+"/"+key).remove();
+  })
+}
+
+
+update(occassionType , key){
+  return new Promise((resolve, reject)=>{
+  firebase.database().ref("category/"+occassionType+"/"+key).update({
+    message:"HAPPPPPPY"
+  });
+  })
+
+}
+getBirthdayMessages(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref("category/Birthday").on('value', (data: any) => {
+
+      var birthdayMessage = data.val();
+       console.log(data.val());
+       if(birthdayMessage !=null){
+
+        this.birthdayMessageArray = [] 
+
+        var keys: any = Object.keys(birthdayMessage);
+ 
+        console.log(keys);
+  
+        for (var i = 0; i < keys.length; i++){
+         var k = keys[i];
+  
+         let obj = {
+           key:k,
+           message:birthdayMessage[k].message ,
+           occasion:birthdayMessage[k].occasion 
+         }
+    
+       this.birthdayMessageArray.push(obj)
+ 
+        resolve(this.birthdayMessageArray);
+ 
+         
+   }
+       }else{
+        
+       }
+ 
+      
+ })
+
+ })
+}
+
+
+getWeddingMessage(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref("category/Wedding").on('value', (data: any) => {
+
+      var weddingMessages = data.val();
+       console.log(data.val());
+       if(weddingMessages !=null){
+
+        this.weddingMessageArray = [] 
+
+        var keys: any = Object.keys(weddingMessages);
+ 
+        console.log(keys);
+  
+        for (var i = 0; i < keys.length; i++){
+         var k = keys[i];
+  
+         let obj = {
+           key:k,
+           message:weddingMessages[k].message ,
+           occasion:weddingMessages[k].occasion 
+         }
+    
+       this. weddingMessageArray.push(obj)
+ 
+        resolve(this.weddingMessageArray);
+ 
+         
+   }
+       }else{
+        
+       }
+ 
+      
+ })
+
+ })
+}
+
+
+getbabyShower(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref("category/Baby shower").on('value', (data: any) => {
+
+      var babyShower = data.val();
+       console.log(data.val());
+       if(babyShower !=null){
+
+        this.birthdayMessageArray = [] 
+
+        var keys: any = Object.keys(babyShower);
+ 
+        console.log(keys);
+  
+        for (var i = 0; i < keys.length; i++){
+         var k = keys[i];
+  
+         let obj = {
+           key:k,
+           message:babyShower[k].message ,
+           occasion:babyShower[k].occasion 
+         }
+    
+       this. babyShowerMessageArray.push(obj)
+ 
+        resolve(this.babyShowerMessageArray);
+ 
+         
+   }
+       }else{
+        
+       }
+ 
+      
+ })
+
+ })
+}
+
+getThinkingofyou(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref("category/Thinking of you").on('value', (data: any) => {
+
+      var thinkingofyou = data.val();
+       console.log(data.val());
+       if(thinkingofyou !=null){
+
+        this.thinkingofyou = [] 
+
+        var keys: any = Object.keys(thinkingofyou);
+ 
+        console.log(keys);
+  
+        for (var i = 0; i < keys.length; i++){
+         var k = keys[i];
+  
+         let obj = {
+           key:k,
+           message:thinkingofyou[k].message ,
+           occasion:thinkingofyou[k].occasion
+         }
+    
+       this.thinkingofyou.push(obj)
+ 
+        resolve(this.thinkingofyou);
+ 
+         
+   }
+       }else{
+        
+       }
+ 
+      
+ })
+
+ })
+  
+}
+
+getAnniversaryMessages(){
+
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref("category/Anniversary").on('value', (data: any) => {
+
+      var Anniversary = data.val();
+       console.log(data.val());
+       if(Anniversary !=null){
+
+        this.birthdayMessageArray = [] 
+
+        var keys: any = Object.keys(Anniversary);
+ 
+        console.log(keys);
+  
+        for (var i = 0; i < keys.length; i++){
+         var k = keys[i];
+  
+         let obj = {
+           key:k,
+           message:Anniversary[k].message ,
+           occasion:Anniversary[k].occasion
+         }
+    
+       this.anniversary.push(obj)
+ 
+        resolve(this.anniversary);
+ 
+         
+   }
+       }else{
+        
+       }
+ 
+      
+ })
+
+ })
+
+}
+
+getGraduationMessages(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref("category/Graduation").on('value', (data: any) => {
+
+      var Graduation = data.val();
+       console.log(data.val());
+       if(Graduation !=null){
+
+        this.birthdayMessageArray = [] 
+
+        var keys: any = Object.keys(Graduation);
+ 
+        console.log(keys);
+  
+        for (var i = 0; i < keys.length; i++){
+         var k = keys[i];
+  
+         let obj = {
+           key:k,
+           message:Graduation[k].message ,
+           occasion:Graduation[k].occasion
+         }
+    
+       this.graduation.push(obj)
+ 
+        resolve(this.graduation);
+ 
+         
+   }
+       }else{
+        
+       }
+ 
+      
+ })
+
+ })
+
+}
+
+getJobMessage(){
+
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref("category/New-JOb").on('value', (data: any) => {
+
+      var newJob = data.val();
+       console.log(data.val());
+       if(newJob !=null){
+
+        this.birthdayMessageArray = [] 
+
+        var keys: any = Object.keys(newJob);
+ 
+        console.log(keys);
+  
+        for (var i = 0; i < keys.length; i++){
+         var k = keys[i];
+  
+         let obj = {
+           key:k,
+           message:newJob[k].message ,
+           occasion:newJob[k].occasion
+         }
+    
+       this.newJob.push(obj)
+ 
+        resolve(this.newJob);
+ 
+         
+   }
+       }else{
+        
+       }
+ 
+      
+ })
+
+ })
+
+}
+
+getGeneralMessage(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref("category/General").on('value', (data: any) => {
+
+      var General = data.val();
+       console.log(data.val());
+       if(General !=null){
+
+        this.birthdayMessageArray = [] 
+
+        var keys: any = Object.keys(General);
+ 
+        console.log(keys);
+  
+        for (var i = 0; i < keys.length; i++){
+         var k = keys[i];
+  
+         let obj = {
+           key:k,
+           message:General[k].message ,
+           occasion:General[k].occasion
+         }
+    
+       this.general.push(obj)
+ 
+        resolve(this.general);
+ 
+         
+   }
+       }else{
+        
+       }
+ 
+      
+ })
+
+ })
+
+}
+
   
 }

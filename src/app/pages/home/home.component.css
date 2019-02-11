@@ -154,6 +154,9 @@ img{
   .tab button.active {
     background-color: #ccc;
   }
+  #update{
+      display: none ;
+  }
 
   #register{
       display:none;

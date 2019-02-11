@@ -12,9 +12,33 @@
 
 <section class="login-block">
   <div class="container">
+
+<button (click)="birthdayMessages()">Birthday</button>
+<button  (click)="weddingMessages()">Wedding</button>
+<button (click)="babyShowerMessages()">Baby shower</button>
+<button  (click)="ThinkingOfYou()">Thinking of you</button>
+<button  (click)="Anniversary()"> Anniversary</button>
+<button   (click)="NewJOb()">New-JOb</button>
+<button (click)="General()">General</button>
+
+
+
+
+
+      <div  *ngFor = "let message of messageArray" >
+          {{message.message}}
+
+          <button (click) ="delete( message.occasion,message.key)">x</button>
+          <button (click) ="update( message.occasion,message.key)">update</button>
+  
+        </div>
     <div class="row">
-    
-        <div class="col-md-6 banner-sec">
+
+     
+    <div id="update">
+
+    </div>
+        <div class="col-md-6 banner-sec" >
            <h1 style="text-align: center; position: relative; top: 50%;left: 50%; transform: translate(-50%, -50%); color: white; padding: 16px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.548)">Write something meaningfull to touch the heart</h1>
           </div>
 
@@ -28,30 +52,35 @@
 
             <div class="w3-input w3-border w3-margin-bottom" class="form-group">
                 <label for="comment">Select category:</label>
-              <select class="form-control" #farmType>
+              <select class="form-control" #farmType [(ngModel)]="ocassionType">
                   <option class="hidden" selected disabled>Select message type</option>
 
-                  <option value="Vertical Farming">Wedding</option>
+                  <option value="Wedding">Wedding</option>
 
-                  <option value="Traditional Farming">Baby shower</option>
+                  <option value="Baby shower">Baby shower</option>
 
-                  <option value="Green House">thinking of you </option>
+                  <option value="Thinking of you">Thinking of you </option>
+                  <option value="Birthday">Birthday </option>
+                  <option value="Anniversary">Anniversary </option>
+                  <option value="Graduation">Graduation </option>
+                  <option value="New-JOb">New-JOb </option>
+                  <option value="General">General </option>
+
+
+                  <!-- <option value="Graduation">Graduation</option>  -->
               </select>
+              
 
               <div class="form-group">
                 <label for="comment">Add message:</label>
-                <textarea class="form-control" rows="5" id="comment"></textarea>
+                <textarea class="form-control" rows="5" id="comment"  [(ngModel)]="message"></textarea>
               </div>
 
           </div>
 
-          <!-- <div>
-              <input class="form-group" type="file" accept="image/*" placeholder="Upload images*" #image 
-                  (change)="insertImageForAddFarm($event)" />
-          </div> -->
             <div class="form-check">
               
-              <button type="submit" class="btn btn-login btn-block">Submit</button>
+              <button type="submit" class="btn btn-login btn-block" (click)="addSave()">Submit</button>
             </div>
 
           </div>
