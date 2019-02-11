@@ -112,18 +112,20 @@ export class HomeComponent implements OnInit {
 
    }
 
-   delete(occassion , key ){
+   delete(occassion , key , index ){
      console.log(key);
      console.log(occassion);
+     console.log(index);
+     
 
-     this.mitService.delete(occassion ,key).then(()=>{
-       console.log("success");
+    //  this.mitService.delete(occassion ,key).then(()=>{
+    //    console.log("success");
        
 
-     }).catch((error)=>{
-       console.log(error);
+    //  }).catch((error)=>{
+    //    console.log(error);
        
-     })
+    //  })
      
      
 

@@ -116,8 +116,7 @@ export class MitService {
 delete(occassionType , key){
   return new Promise((resolve, reject)=>{
   
-    console.log("category/"+occassionType+"/"+key);
-    console.log("category/Wedding/-LYCR3t7ry_45iWHHj1u");
+    
     
     
     firebase.database().ref("category/"+occassionType+"/"+key).remove();

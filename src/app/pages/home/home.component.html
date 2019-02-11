@@ -35,11 +35,11 @@
 
 </div>
 
-      <div  *ngFor = "let message of messageArray" >
+      <div  *ngFor = "let message of messageArray ; let a  =index" >
           {{message.message}}
 
-          <button (click) ="delete( message.occasion,message.key)">x</button>
-          <button (click) ="update( message.occasion,message.key, message.message)">update</button>
+          <button (click) ="delete( message.occasion,message.key , a)">x</button>
+          <button (click) ="update( message.occasion,message.key, message.message , )">update</button>
   
         </div>
     <div class="row">
