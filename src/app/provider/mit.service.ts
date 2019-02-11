@@ -455,5 +455,45 @@ getGeneralMessage(){
 
 }
 
+
+addCard(card){
+  return new Promise((resolve, reject) => {
+    firebase.database().ref('category/Cards').push({
+      message: card
+    })
+  })
+}
+
+deleteCard(id){
+  return new Promise((resolve, reject) => {
+    firebase.database().ref('category/Cards/'+id).remove()
+  })
+}
+
+
+getAllCards(){
+  return new Promise((resolve, reject) => {
+    firebase.database().ref('category/Cards').on('value',(data:any)=>{
+      var cards = data.val() ;
+      var keys:any =Object.keys(cards)
+      var cardsInfo = []
+
+      for (let i = 0; i < keys.length; i++) {
+        var  k =keys[i];
+        let obj = {
+          k:k ,
+          card:cards[k].message
+        }
+
+        cardsInfo.push(obj) ;
+        console.log(cardsInfo);
+
+
+      }
+      resolve(cardsInfo)
+    })
+  })
+}
+
   
 }

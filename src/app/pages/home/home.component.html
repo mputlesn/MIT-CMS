@@ -1,120 +1,123 @@
 <head>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  
+  
+  
+  </head>
+  
+  <body>
+  
+  <section class="login-block">
 
+      <button (click)="birthdayMessages()">Birthday</button>
+      <button  (click)="weddingMessages()">Wedding</button>
+      <button (click)="babyShowerMessages()">Baby shower</button>
+      <button  (click)="ThinkingOfYou()">Thinking of you</button>
+      <button  (click)="Anniversary()"> Anniversary</button>
+      <button   (click)="NewJOb()">New-JOb</button>
+      <button (click)="General()">General</button>
+      <button (click)="test()">test</button>
+      
 
+      
 
-
-</head>
-
-<body>
-
-<section class="login-block">
-  <div class="container">
-
-<button (click)="birthdayMessages()">Birthday</button>
-<button  (click)="weddingMessages()">Wedding</button>
-<button (click)="babyShowerMessages()">Baby shower</button>
-<button  (click)="ThinkingOfYou()">Thinking of you</button>
-<button  (click)="Anniversary()"> Anniversary</button>
-<button   (click)="NewJOb()">New-JOb</button>
-<button (click)="General()">General</button>
-<button (click)="test()">test</button>
-
-
-
+      
 <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-   <textarea [(ngModel)]="message" value="{{messageupdate}}">Please type a message </textarea>
-   <button (click)="updateMessage()">update</button>
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+     <textarea [(ngModel)]="message" value="{{messageupdate}}">Please type a message </textarea>
+     <button (click)="updateMessage()">update</button>
+    </div>
+  
   </div>
-
-</div>
-
-      <div  *ngFor = "let message of messageArray ; let a  =index" >
+  
+      <div  *ngFor = "let message of messageArray  ; let a =index" >
           {{message.message}}
 
           <button (click) ="delete( message.occasion,message.key , a)">x</button>
-          <button (click) ="update( message.occasion,message.key, message.message , )">update</button>
+          <button (click) ="update( message.occasion,message.key, message.message , a)">update</button>
   
         </div>
-    <div class="row">
-
-     
-    <div id="update">
-
-    </div>
-        <div class="col-md-6 banner-sec" >
-           <h1 style="text-align: center; position: relative; top: 50%;left: 50%; transform: translate(-50%, -50%); color: white; padding: 16px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.548)">Write something meaningfull to touch the heart</h1>
-          </div>
-
-      <div class="col-md-6 login-sec">
-        <div class="login tabcontent " id="Login">
-          <h2 class="text-center">Add messages</h2>
-          <div class="login-form">
-        
-            
-       
-
-            <div class="w3-input w3-border w3-margin-bottom" class="form-group">
-                <label for="comment">Select category:</label>
-              <select class="form-control" #farmType [(ngModel)]="ocassionType">
-                  <option class="hidden" selected disabled>Select message type</option>
-
-                  <option value="Wedding">Wedding</option>
-
-                  <option value="Baby shower">Baby shower</option>
-
-                  <option value="Thinking of you">Thinking of you </option>
-                  <option value="Birthday">Birthday </option>
-                  <option value="Anniversary">Anniversary </option>
-                  <option value="Graduation">Graduation </option>
-                  <option value="New-JOb">New-JOb </option>
-                  <option value="General">General </option>
 
 
-                  <!-- <option value="Graduation">Graduation</option>  -->
-              </select>
-              
-
-              <div class="form-group">
-                <label for="comment">Add message:</label>
-                <textarea class="form-control" rows="5" id="comment"  [(ngModel)]="message"></textarea>
-              </div>
-
-          </div>
-
-            <div class="form-check">
-              
-              <button type="submit" class="btn btn-login btn-block" (click)="addSave()">Submit</button>
+      
+    <div class="container">
+      <div class="row">
+      
+          <div class="col-md-6 banner-sec">
+             <h1 style="text-align: center; position: relative; top: 50%;left: 50%; transform: translate(-50%, -50%); color: white; padding: 16px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.548)">Write something meaningfull to touch the heart</h1>
             </div>
-
+  
+        <div class="col-md-6 login-sec">
+          <div class="login tabcontent " id="Login">
+            <h2 class="text-center">Add messages</h2>
+            <div class="login-form">
+          
+              
+         
+  
+              <div class="w3-input w3-border w3-margin-bottom" class="form-group">
+                  <label for="comment">Select category:</label>
+              
+                  <select class="form-control" #farmType [(ngModel)]="ocassionType">
+                      <option class="hidden" selected disabled>Select message type</option>
+    
+                      <option value="Wedding">Wedding</option>
+    
+                      <option value="Baby shower">Baby shower</option>
+    
+                      <option value="Thinking of you">Thinking of you </option>
+                      <option value="Birthday">Birthday </option>
+                      <option value="Anniversary">Anniversary </option>
+                      <option value="Graduation">Graduation </option>
+                      <option value="New-JOb">New-JOb </option>
+                      <option value="General">General </option>
+    
+    
+                      <!-- <option value="Graduation">Graduation</option>  -->
+                  </select>
+    
+  
+                <div class="form-group">
+                  <label for="comment">Add message:</label>
+                  <textarea class="form-control" rows="5" id="comment" [(ngModel)]="message"></textarea>
+                </div>
+  
+            </div>
+  
+            <!-- <div>
+                <input class="form-group" type="file" accept="image/*" placeholder="Upload images*" #image 
+                    (change)="insertImageForAddFarm($event)" />
+            </div> -->
+              <div class="form-check">
+                
+                <button type="submit" class="btn btn-login btn-block" (click)="addSave()">Submit</button>
+              </div>
+  
+            </div>
+         
           </div>
+  
+  
+  
+  
+  
        
         </div>
-
-
-
-
-
-     
+  
+  
+      
+  
       </div>
-
-
-    
-
     </div>
-  </div>
-
-
-
-</section>
-
-</body> 
-
-
-
+  
+  
+  
+  </section>
+  
+  </body> 
