@@ -302,7 +302,7 @@ getAnniversaryMessages(){
        console.log(data.val());
        if(Anniversary !=null){
 
-        this.birthdayMessageArray = [] 
+        this.anniversary = [] 
 
         var keys: any = Object.keys(Anniversary);
  
