@@ -125,10 +125,12 @@ delete(occassionType , key){
 }
 
 
-update(occassionType , key){
+update(occassionType , key , message){
   return new Promise((resolve, reject)=>{
+    console.log("category/"+occassionType+"/"+key);
+    console.log("category/Wedding/-LYCR3t7ry_45iWHHj1u");
   firebase.database().ref("category/"+occassionType+"/"+key).update({
-    message:"HAPPPPPPY"
+    message:message
   });
   })
 

@@ -20,16 +20,26 @@
 <button  (click)="Anniversary()"> Anniversary</button>
 <button   (click)="NewJOb()">New-JOb</button>
 <button (click)="General()">General</button>
+<button (click)="test()">test</button>
 
 
 
+<div id="myModal" class="modal">
 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+   <textarea [(ngModel)]="message" value="{{messageupdate}}">Please type a message </textarea>
+   <button (click)="updateMessage()">update</button>
+  </div>
+
+</div>
 
       <div  *ngFor = "let message of messageArray" >
           {{message.message}}
 
           <button (click) ="delete( message.occasion,message.key)">x</button>
-          <button (click) ="update( message.occasion,message.key)">update</button>
+          <button (click) ="update( message.occasion,message.key, message.message)">update</button>
   
         </div>
     <div class="row">

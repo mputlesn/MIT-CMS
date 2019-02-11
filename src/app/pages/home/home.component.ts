@@ -11,7 +11,11 @@ export class HomeComponent implements OnInit {
   message ;
   ocassionType ;
  
-  messageArray = []
+  messageArray = [] ;
+
+  occassionType ;
+  uniqueKey ;
+  messageupdate ;
 
   constructor(public mitService:MitService) {
 
@@ -126,13 +130,44 @@ export class HomeComponent implements OnInit {
    }
 
 
-   update(occassion , key){
-     console.log(occassion);
-     console.log(key);
-     document.getElementById("update").style.display='block' ;
-     this.mitService.update(occassion , key)
+   update(occassion , key , message){
+  
+  
+   
+     var modal = document.getElementById('myModal');
+     var btn = document.getElementById("myBtn");
+     var span = document.getElementsByClassName("close")[0];
+    modal.style.display = "block";
+
+
+
+
+  
+     this.occassionType = occassion ;
+     this.uniqueKey = key ;
+     this.messageupdate = message
+    
+    
+    
      
      
 
+   }
+   updateMessage(){
+     console.log(this.occassionType);
+     console.log( this.uniqueKey);
+     console.log(this.messageupdate);
+     
+     
+     
+     console.log(this.message);
+    this.mitService.update(this.occassionType , this.uniqueKey , this.message).then(()=>{
+      console.log("success");
+      
+
+    }).catch((error)=>{
+      this.mitService.oops(error.message) ;
+    }) ;
+     
    }
 }
