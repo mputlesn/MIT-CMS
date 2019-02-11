@@ -1,0 +1,187 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.login-block{
+background: #DE6262;
+background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);  
+background: linear-gradient(to bottom, #FFB88C, #DE6262); 
+float:left;
+width:100%;
+height: 100vh;
+padding : 200px 0;
+background-size: cover;
+background-repeat: no-repeat;
+}
+.form-control:focus + .form-control-placeholder,
+.form-control:valid + .form-control-placeholder {
+  font-size: 75%;
+  transform: translate3d(0, -100%, 0);
+  opacity: 1;
+}
+
+.row-no-gutter {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  .row-no-gutter [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+.form-group {
+    position: relative;
+    margin-bottom: 3.5rem;
+  }
+
+  
+  .form-control-placeholder {
+    position: absolute;
+    top: 0;
+    padding: 7px 0 10px 13px;
+    transition: all 200ms;
+    opacity: 0.5;
+  }
+.banner-sec{
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(255, 186, 186, 0) 30%, rgba(255, 186, 186, 0.65) 100%), url('../../../assets/birthday.jpeg') no-repeat;  */
+    background-size:cover;
+     background-repeat: no-repeat; 
+      background-position: center;
+     min-height:500px;
+    border-radius: 0 10px 10px 0;
+     padding:0;
+     background-color: #E36262;
+     display: block;
+     margin: 0 auto;
+    }
+
+ 
+
+    .card{
+       padding: 10px;
+       background-color: transparent
+    
+    }
+
+.container{
+    background:#fff;
+     border-radius: 10px; 
+     box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+    }
+
+
+.login-sec{
+    padding: 50px 30px;
+     position:relative;
+    }
+.login-sec .copy-text{
+    position:absolute;
+     width:80%; 
+    bottom:20px;
+     font-size:13px;
+     text-align:center;
+    }
+.login-sec .copy-text i{
+    color:#FEB58A;
+}
+.login-sec .copy-text h6{
+    color:#E36262;
+}
+.login-sec .copy-text {
+    margin-top: 5rem;
+ 
+}
+
+.login-sec h2{
+    margin-top:50px;
+    margin-bottom:30px;
+     font-weight:800;
+      font-size:30px;
+       color: #DE6262;
+    }
+.login-sec h2:after{
+    content:" ";
+     width:100px;
+      height:5px;
+      background:#FEB58A;
+       display:block;
+        margin-top:20px;
+         border-radius:3px;
+          margin-left:auto;
+          margin-right:auto
+        }
+.btn-login{
+    background: #DE6262;
+     color:#fff; 
+     font-weight:600;
+    }
+    .btn-register{
+        background: #DE6262;
+         color:#fff; 
+         font-weight:600;
+         margin-bottom: 2.5rem;
+         width: 100%;
+        }
+.banner-text{
+    width:70%;
+     position:absolute;
+      bottom:40px; 
+      padding-left:20px;
+    }
+.banner-text h2{
+    color:#fff; 
+    font-weight:600;
+}
+.banner-text h2:after{
+    content:" ";
+     width:100px; 
+     height:5px; 
+     background:#FFF;
+      display:block;
+       margin-top:20px;
+        border-radius:3px
+    }
+.banner-text p{
+    color:#fff;
+}
+
+
+
+
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+
+  .tab button.active {
+    background-color: #ccc;
+  }
+
+  #register{
+      display:none;
+  }
+  .login-sec[_ngcontent-c1] h2[_ngcontent-c1] {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 30px;
+    color: #DE6262;
+}
+   

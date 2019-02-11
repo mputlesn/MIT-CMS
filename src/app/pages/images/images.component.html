@@ -1,0 +1,79 @@
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+<section class="login-block">
+  <div class="container">
+    <div class="row">
+    
+        <div class="col-md-6 banner-sec">
+            <!-- <div class="row">
+                
+                    <div class="card card-body h-100" *ngFor="let a of cards">
+                        <img src="{{a.card}}" alt="" width="300px" height="200px">
+                    </div>
+            </div> -->
+           <!-- <h1 style="text-align: center; position: relative; top: 50%;left: 50%; transform: translate(-50%, -50%); color: white; padding: 16px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.548)">Write something meaningfull to touch the heart</h1> -->
+           <div class='row'>
+              <div class='col-md-auto card' *ngFor="let a of cards" (click)="delete(a.k)">
+                <img class='img-responsive' src='{{a.card}}' alt="" width="130px" height="90px">
+              </div>
+            </div>
+          </div>
+
+      <div class="col-md-6 login-sec">
+        <div class="login tabcontent " id="Login">
+          <h2 class="text-center">Add Card</h2>
+          <div class="login-form">
+        
+            
+       
+
+            <div class="w3-input w3-border w3-margin-bottom" class="form-group">
+               
+
+                <img [src]="url" *ngIf="url != null" width="300" height="200"><br><br>
+                <input type="file" #image accept="image/png, image/jpeg" (change)="insertImage($event)"><br><br>
+                
+
+          </div>
+
+          <!-- <div>
+              <input class="form-group" type="file" accept="image/*" placeholder="Upload images*" #image 
+                  (change)="insertImageForAddFarm($event)" />
+          </div> -->
+            <div class="form-check">
+              
+              <button type="submit" class="btn btn-login btn-block" (click)="save()">Submit</button>
+            </div>
+
+          </div>
+       
+        </div>
+
+
+
+
+
+     
+      </div>
+
+
+    
+
+    </div>
+  </div>
+
+
+
+</section>
+
+</body> 
