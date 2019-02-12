@@ -1,6 +1,6 @@
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 .login-block{
-background: #DE6262;
+/* background: #DE6262; */
 background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);  
 background: linear-gradient(to bottom, #FFB88C, #DE6262); 
 float:left;
@@ -46,20 +46,102 @@ background-repeat: no-repeat;
      background-repeat: no-repeat; 
       background-position: center;
      min-height:500px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 10px 10px 10px 10px;
      padding:0;
-     background-color: #E36262;
+      background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(224, 224, 224));   
      display: block;
      margin: 0 auto;
+     /* background: rgb(245, 245, 245) */
     }
 
  
 
-    .card{
-       padding: 10px;
-       background-color: transparent
-    
+    .cards{
+       padding-bottom: 10px;
+       padding-top: 10px;
+       background-color: transparent;
+       margin: 0 auto;
+       display: flex;
+       justify-content: center;
+       align-items: center;    
     }
+    /* .card {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: transparent;
+      background-clip: border-box;
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-radius: .25rem;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin: 0 auto;
+      
+   
+  } */
+  .col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    
+    margin-right: 3px;
+      margin-left: 3px;
+      border-radius:15px ;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+  img {
+    vertical-align: middle;
+    border-style: none;
+    height: 11vw;
+    width: 11vw;
+    border-radius: 8px
+}
+.imgdisplay{
+height: 220px;
+width: 75%;
+position: relative;
+top: 100px;
+left: 50%;
+transform: translate(-50%, -50%)
+}
+.topnav{
+  height: 10%;
+  width: 100%;
+  background-color: transparent;
+  /* border: 2px solid white; */
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white
+}
+
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    overflow: auto;
+    max-height: 600px;
+    
+}
 
 .container{
     background:#fff;
@@ -69,7 +151,7 @@ background-repeat: no-repeat;
 
 
 .login-sec{
-    padding: 50px 30px;
+    padding: 10px 30px;
      position:relative;
     }
 .login-sec .copy-text{
@@ -184,4 +266,100 @@ background-repeat: no-repeat;
     font-size: 30px;
     color: #DE6262;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #DE6262; 
+  border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #DE6262;
+}
+input[type="file" i] {
+  align-items: baseline;
+  color: inherit;
+  text-align: start !important;
+}
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: aqua;
+  background: red
+}
+input {
+  padding: 1px 0px;
+  border-radius: 5px 15px 15px 15px;
+  color: aqua;
+  background: aliceblue;
+}
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+body{
+    
+    background-color:#ff666f;
+
+}
+
+a{
+    
+    color:#fff !important;
+    
+}
+.nav-item {
+    font-family: Century Gothic;
+    margin: 0 auto;
+    padding: 2em 8em;
+    text-align: center;
+}
+.nav-item a {
+    color: #FFF;
+    text-decoration: none;
+    font: 35px Century Gothic;
+    margin: 0px 20px;
+    padding:10px 10px;
+    position: relative;
+    z-index: 0;
+    font-weight: 900;
    
+}
+
+
+/* Top & Bottom Borders Out */
+.topBotomBordersOut a:before, .topBotomBordersOut a:after {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content:"";
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.topBotomBordersOut a:before {
+    top: 0px;
+    transform: translateY(10px);
+}
+.topBotomBordersOut a:after {
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+.topBotomBordersOut a:hover:before, .topBotomBordersOut a:hover:after {
+    opacity: 2;
+    transform: translateY(0px);
+}
+
+
+
+

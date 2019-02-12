@@ -30,13 +30,15 @@ background-repeat: no-repeat;
     opacity: 0.5;
   }
 .banner-sec{
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(255, 186, 186, 0) 30%, rgba(255, 186, 186, 0.65) 100%), url('../../../assets/birthday.jpeg') no-repeat;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(255, 186, 186, 0) 30%, rgba(255, 186, 186, 0.65) 100%), url('../../../assets/birthday.jpeg') no-repeat; */
      background-size:cover;
      background-repeat: no-repeat;
      /* background-position: center; */
      min-height:500px;
+    height:500px;
     border-radius: 0 10px 10px 0;
      padding:0;
+     overflow: auto;
     }
 
 .container{
@@ -154,6 +156,19 @@ img{
   .tab button.active {
     background-color: #ccc;
   }
+
+
+
+  .round-tabs  :hover {
+    background-color: white;
+    color: white;
+  }
+  .active, .tabss :hover {
+    background-color: rgb(201, 193, 193);
+    color: white;
+  }
+
+  
   #update{
       display: none ;
   }
@@ -166,30 +181,475 @@ img{
     margin-bottom: 30px;
     font-weight: 800;
     font-size: 30px;
-    color: #DE6262;
+    color: rgb(211, 136, 136);
 }
 
+.cards{
+    margin-bottom: 1%;
+    border: 0% !important;
+    cursor: pointer;
+    /* background-color: #E36262; */
+
+}
+.card{
+    background-color: #E36262;
+    width: 100%;
+}
 
 .modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
+    height: 50%;
+  }
+  .modal{
+    width: 50%;
+    height: 50%;
+    margin: 0% auto;
+    position: absolute;
+    top: 30%;
+  }
+  .textareaModal{
+    height: 150px;
+
   }
   
   /* The Close Button */
-  .close {
+  .closebtn {
     color: #aaaaaa;
-    float: right;
+    float: center;
     font-size: 28px;
     font-weight: bold;
   }
   
-  .close:hover,
-  .close:focus {
+  .closebtn:hover,
+  .closebtn:focus {
+
     color: #000;
     text-decoration: none;
     cursor: pointer;
   }
+
+  .btn-update  .btn-update :hover,
+  .btn-update :focus  {
+    
+       color: white;
+
+  }
+  .btn-update {
+    float: right;
+    background-color: white; 
+       color: #000;
+       width: 30%;
+       position: relative;
+       left: 65%;
+       height: 50px;
+     
+
+
+  }
+
+
+
+
+span.round-tabs{
+    width: 60px;
+    height: 60px;
+    line-height: 50px;
+    display: inline-block;
+    border-radius: 100px;
+    background: white;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
+li.active span.round-tabs.one{
+    background: rgb(158, 27, 27) !important;
+    border: 2px solid#cf75ae;
+    color: #cf75ae;
+}
+
+span.round-tabs.two{
+    color: #FBD17F;
+    border: 2px solid#FBD17F;
+}
+
+li.active span.round-tabs.two{
+    background: #fff !important;
+    border: 2px solid #ddd;
+    color: #febe29;
+}
+
+span.round-tabs.three{
+    color: #FFB1B5;
+    border: 2px solid #FFB1B5;
+}
+
+li.active span.round-tabs.three{
+    background: #FFB1B5 !important;
+    border: 2px solid #ddd;
+    color:#FFB1B5 ;
+}
+
+span.round-tabs.four{
+    color: #FFB4ED  ;
+    border: 2px solid #FFB4ED ;
+}
+
+li.active span.round-tabs.four{
+    background: #fff !important;
+    border: 2px solid #ddd;
+    color: #f1685e;
+}
+
+span.round-tabs.five{
+    color: #F8A7C8;
+    border: 2px solid #F8A7C8;
+}
+
+li.active span.round-tabs.five{
+    background: #F8A7C8 !important;
+    border: 2px solid #F8A7C8 ;
+    color: #999;
+}
+
+
+span.round-tabs.six{
+    color: #FFBF95;
+    border: 2px solid #FFBF95;
+}
+
+li.active span.round-tabs.six{
+    background: red !important;
+    border: 2px solid red;
+    color: #999;
+}
+
+span.round-tabs.seven{
+    color: #9CDCFF;
+    border: 2px solid #999;
+}
+
+li.active span.round-tabs.seven{
+    background: #fff !important;
+    border: 2px solid #9CDCFF;
+    color: #999;
+}
+
+span.round-tabs.eight{
+    color: #999;border: 2px solid #999;
+}
+span.round-tabs.five[_ngcontent-c1] {
+    color: #F8A7C8;
+    border: 2px solid #F8A7C8;
+}
+span.round-tabs.six[_ngcontent-c1] {
+    color: #FFBF95;
+    border: 2px solid#FFBF95;
+}
+span.round-tabs.one[_ngcontent-c1] {
+    color: #FFBF95;
+    border: 2px solid#FFBF95;
+}
+span.round-tabs.seven[_ngcontent-c1] {
+    color: #9CDCFF;
+    border: 2px solid#9CDCFF;
+}
+span.round-tabs.eight[_ngcontent-c1] {
+    color: #14ca48;
+    border: 2px solid #14ca48;
+}
+
+li.active[_ngcontent-c1] span.round-tabs.one[_ngcontent-c1] {
+    background: #fff !important;
+    border: 2px solid rgb(180, 17, 17);
+    color: #A9D67E;
+}
+
+li.active span.round-tabs.eight{
+    background: #fff !important;
+    border: 2px solid #ddd;
+    color: #999;
+}
+
+.nav-tabs > li.active > a span.round-tabs{
+    background: #fafafa;
+}
+.nav-tabs > li {
+    width: 12.5%;
+}
+
+.nav-tabs > li:after {
+    content: " ";
+    position: absolute;
+    left: 45%;
+   opacity:0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+ 
+    transition:0.1s ease-in-out;
+    
+}
+.nav-tabs > li.active:after {
+    /* content: " ";
+    position: absolute;
+    left: 45%;
+   opacity:1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #ddd; */
+    
+}
+.nav-tabs > li a{
+   width: 40px;
+   height: 40px;
+   margin: 10px auto;
+   border-radius: 100%;
+   padding: 0;
+}
+
+.nav-tabs > li a:hover{
+    background: transparent;
+}
+
+.tab-content{
+}
+.tab-pane{
+   position: relative;
+padding-top: 50px;
+}
+.tab-content .head{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+.btn-outline-rounded{
+    padding: 10px 40px;
+    margin: 20px 0;
+    border: 2px solid transparent;
+    border-radius: 25px;
+}
+.nav-tabs {
+    border-bottom: 0px;
+}
+
+
+
+
+
+@media( max-width : 585px ){
+    
+    .board {
+width: 90%;
+height:auto !important;
+}
+    span.round-tabs {
+        font-size:16px;
+width: 50px;
+height: 50px;
+line-height: 50px;
+    }
+    .tab-content .head{
+        font-size:20px;
+        }
+    .nav-tabs > li a {
+width: 50px;
+height: 50px;
+line-height:50px;
+}
+
+.nav-tabs > li.active:after {
+content: " ";
+position: absolute;
+left: 35%;
+}
+
+.btn-outline-rounded {
+    padding:12px 20px;
+    }
+}
+
+span.round-tabs[_ngcontent-c1] {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    border-radius: 100px;
+    background: white;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+
+.hoverlabel:hover + label{
+    transform: scale(1);
+    position: relative;
+    right: 50px;
+    transition: all ease .3s;
+    color: black;
    
+  }
+  .card-body{
+      /* padding-top: 0%; */
+
+  }
+
+  form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+
+} 
+ .heading{
+      font-weight: bold;
+      text-align: center;
+  }
+  .close{
+      font-weight: bold;
+  }
+  select.form-control:not([size]):not([multiple]) {
+    height: calc(3.25rem + 2px);
+}
+.topnav{
+    height: 10%;
+    width: 100%;
+    background-color: transparent;
+    /* border: 2px solid white; */
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white
+  }
+  @import url(http://fonts.googleapis.com/css?family=Raleway);
+body{
+    
+    background-color:#ff666f;
+
+}
+
+a{
+    
+    color:#fff !important;
+    
+}
+.nav-item {
+    font-family: Century Gothic;
+    margin: 0 auto;
+    padding: 2em 8em;
+    text-align: center;
+}
+.nav-item a {
+    color: #FFF;
+    text-decoration: none;
+    font: 35px Century Gothic;
+    margin: 0px 20px;
+    padding:10px 10px;
+    position: relative;
+    z-index: 0;
+    font-weight: 900;
+   
+}
+
+
+/* Top & Bottom Borders Out */
+.topBotomBordersOut a:before, .topBotomBordersOut a:after {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content:"";
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.topBotomBordersOut a:before {
+    top: 0px;
+    transform: translateY(10px);
+}
+.topBotomBordersOut a:after {
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+.topBotomBordersOut a:hover:before, .topBotomBordersOut a:hover:after {
+    opacity: 2;
+    transform: translateY(0px);
+}

@@ -9,21 +9,34 @@
 </head>
 
 <body>
+<div class="topnav">
+  <nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top">
+    <div class="">
+    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+      <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">Add Card</a></li>
+        <li class="nav-item"> <a class="nav-link" href="#">Users</a> 
+          <li class="nav-item"> <a class="nav-link" href="#">Logout</a> 
 
+        </li>
+      </ul>
+    </div>
+    </div>   
+  </nav>
+</div>
 <section class="login-block">
   <div class="container">
     <div class="row">
     
         <div class="col-md-6 banner-sec">
-            <!-- <div class="row">
-                
-                    <div class="card card-body h-100" *ngFor="let a of cards">
-                        <img src="{{a.card}}" alt="" width="300px" height="200px">
-                    </div>
-            </div> -->
-           <!-- <h1 style="text-align: center; position: relative; top: 50%;left: 50%; transform: translate(-50%, -50%); color: white; padding: 16px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.548)">Write something meaningfull to touch the heart</h1> -->
+   
+            
+           <!-- <h1 style="text-align: center;  color: #DE6262; padding: 16px;  font-weight: 800;font-size: 35px">Cards</h1> -->
            <div class='row'>
-              <div class='col-md-auto card' *ngFor="let a of cards" (click)="delete(a.k)">
+              <div class='col' *ngFor="let a of cards; let i = index" (click)="delete(a.k, i)">
                 <img class='img-responsive' src='{{a.card}}' alt="" width="130px" height="90px">
               </div>
             </div>
@@ -31,7 +44,7 @@
 
       <div class="col-md-6 login-sec">
         <div class="login tabcontent " id="Login">
-          <h2 class="text-center">Add Card</h2>
+          <h2 class="text-center">Add Your Card</h2>
           <div class="login-form">
         
             
@@ -40,7 +53,7 @@
             <div class="w3-input w3-border w3-margin-bottom" class="form-group">
                
 
-                <img [src]="url" *ngIf="url != null" width="300" height="200"><br><br>
+                <img class="imgdisplay" [src]="url" *ngIf="url != null" width="500" height="500"><br><br>
                 <input type="file" #image accept="image/png, image/jpeg" (change)="insertImage($event)"><br><br>
                 
 
@@ -59,10 +72,6 @@
        
         </div>
 
-
-
-
-
      
       </div>
 
@@ -75,5 +84,7 @@
 
 
 </section>
+<footer>
 
+</footer>
 </body> 

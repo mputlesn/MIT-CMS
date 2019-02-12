@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MitService } from '../../provider/mit.service';
-
+import Swal from 'sweetalert2'
 
 declare var firebase;
 
@@ -19,6 +19,7 @@ export class ImagesComponent implements OnInit {
 
   ngOnInit() {
     this.getAllCards()
+    
   }
 
   getAllCards(){
@@ -53,14 +54,54 @@ export class ImagesComponent implements OnInit {
 
   save(){
     this.mit.addCard(this.url).then(()=>{
+      this.ngOnInit()
       this.mit.sucess("Card Uploaded Successfully")
     }).catch((error)=>{
       this.mit.oops("Oops something went wrong please try again")
     })
   }
 
-  delete(key){
-    this.mit.deleteCard(key)
+  delete(key,index){
+    console.log(index);
+    
+
+    const swalWithBootstrapButtons = Swal.mixin({
+      confirmButtonClass: 'btn btn-success',
+      cancelButtonClass: 'btn btn-danger',
+      buttonsStyling: false,
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+        this.cards.splice(index, 1)
+        firebase.database().ref('category/Cards/'+key).remove()
+        
+        swalWithBootstrapButtons.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      } else if (
+        // Read more about handling dismissals
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelled',
+          'Your file is safe :)',
+          'error'
+        )
+      }
+      
+    })
+
   }
 
 }

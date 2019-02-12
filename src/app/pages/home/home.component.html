@@ -1,123 +1,244 @@
 <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
-  
-  
-  
-  </head>
-  
-  <body>
-  
-  <section class="login-block">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
+  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+   crossorigin="anonymous">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-      <button (click)="birthdayMessages()">Birthday</button>
-      <button  (click)="weddingMessages()">Wedding</button>
-      <button (click)="babyShowerMessages()">Baby shower</button>
-      <button  (click)="ThinkingOfYou()">Thinking of you</button>
-      <button  (click)="Anniversary()"> Anniversary</button>
-      <button   (click)="NewJOb()">New-JOb</button>
-      <button (click)="General()">General</button>
-      <button (click)="test()">test</button>
-      
 
-      
-
-      
-<div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-     <textarea [(ngModel)]="message" value="{{messageupdate}}">Please type a message </textarea>
-     <button (click)="updateMessage()">update</button>
-    </div>
-  
-  </div>
-  
-      <div  *ngFor = "let message of messageArray  ; let a =index" >
+</head>
+         <!-- <div class="tabs">
+            <button (click)="birthdayMessages()">Birthday</button>
+            <button (click)="weddingMessages()">Wedding</button>
+            <button (click)="babyShowerMessages()">Baby shower</button>
+            <button (click)="ThinkingOfYou()">Thinking of you</button>
+            <button (click)="Anniversary()"> Anniversary</button>
+            <button (click)="NewJOb()">New-JOb</button>
+            <button (click)="General()">General</button>
+            <button (click)="test()">test</button>
+          </div> -->
+    <!-- <div  *ngFor = "let message of messageArray  ; let a =index" >
           {{message.message}}
 
           <button (click) ="delete( message.occasion,message.key , a)">x</button>
           <button (click) ="update( message.occasion,message.key, message.message , a)">update</button>
   
-        </div>
+        </div> -->
+<body>
+  <div class="topnav">
+    <nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top">
+      <div class="">
+      <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+        <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Add Card</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Users</a> 
+            <li class="nav-item"> <a class="nav-link" href="#">Logout</a> 
+  
+          </li>
+        </ul>
+      </div>
+      </div>   
+    </nav>
+  </div>
+
+  
+  <section class="login-block">
+    
+
+        
+    <div id="myModal" class="modal  ">
+  
+      <div class="modal-content">
+        <span onclick="document.getElementById('myModal').style.display='none'" 
+          class="w3-button w3-display-topright close ">&times;</span>
+         
+          <h5 class="heading" >Update Message</h5>
+        <textarea  class="textareaModal" [(ngModel)]="message" value="{{messageupdate}}">Please type a message </textarea>
+        <button class="btn btn-login btn-block " onclick="document.getElementById('myModal').style.display='none'"   (click)="updateMessage()">update</button>
+      </div>
+
+    </div>
 
 
-      
+
+
+
+
     <div class="container">
       <div class="row">
-      
-          <div class="col-md-6 banner-sec">
-             <h1 style="text-align: center; position: relative; top: 50%;left: 50%; transform: translate(-50%, -50%); color: white; padding: 16px; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.548)">Write something meaningfull to touch the heart</h1>
+        <div class="col-md-6 banner-sec">
+          <div class="board-inner">
+              <ul class="nav nav-tabs" id="myTab">
+                <li class=" tabss"  (click)="birthdayMessages()">
+                  <a  data-toggle="tab" title="Birthday">
+                    <span class="round-tabs one">
+                        <i class="fa fa-birthday-cake" style="font-size: xx-large; color: #cf75ae" ></i>
+                    </span>
+               
+                  </a>
+                </li>
+        
+                <li  class="tabss"   (click)="graduationMessages()" >
+                  <a data-toggle="tab" title="Graduation">
+                    <span class="round-tabs two">
+                        <i class="fa fa-user-graduate" style="font-size: xx-large" ></i>
+                    </span>
+                  </a>
+                </li>
+                <li  class="tabss"   (click)="weddingMessages()" >
+                    <a data-toggle="tab" title="Wedding">
+                      <span class="round-tabs three">
+                          <i class="fa fa-ring" style="font-size: xx-large" ></i>
+                      </span>
+                    </a>
+                  </li>
+                <li   class="tabss" (click)="babyShowerMessages()" >
+                  <a data-toggle="tab" title=" Baby Shower">
+                    <span class="round-tabs four">
+                        <i class="fa fa-baby" style="font-size: xx-large" ></i>
+                    </span>
+                  </a>
+                </li>
+        
+                <li  class="tabss"  (click)="ThinkingOfYou()" >
+                  <a data-toggle="tab" title="Thinking Of You">
+                    <span class="round-tabs five">
+                        <i class="fa fa-comments" style="font-size: xx-large" ></i>
+                    </span>
+                  </a>
+                </li>
+        
+                <li   class="tabss"  (click)="Anniversary()" >
+                  <a data-toggle="tab" title="Anniversary">
+                    <span class="round-tabs six">
+                        <i class="fa fa-home" style="font-size: xx-large" ></i>
+                    </span>
+                  </a>
+                </li>
+                <li  class="tabss"   (click)="NewJOb()" >
+                    <a data-toggle="tab" title="New Job">
+                      <span class="round-tabs seven">
+                           <i class="fa fa-briefcase" style="font-size: xx-large" ></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li  class="tabss"  (click)="General()" >
+                      <a data-toggle="tab" title="General">
+                        <span class="round-tabs eight">
+                            <i class="fa fa-users" style="font-size: xx-large" ></i>
+                        </span>
+                      </a>
+                    </li>
+        
+              </ul>
             </div>
-  
+
+        <br> <br>
+            
+              <div class="col-sm-12  cards  " *ngFor="let message of messageArray  ; let i =index" >
+                <div class="card h-100 text-white float-right">
+                  <div class="card-body" (click)="delete( message.occasion,message.key , i)">
+
+                    <p class="card-text"> {{message.message}}</p>
+            
+                   
+
+                  </div> 
+                  <button  class=" btn  btn-update" (click)="update( message.occasion,message.key, message.message , a)">update</button>
+                </div>
+              </div>
+
+        </div>
+
         <div class="col-md-6 login-sec">
           <div class="login tabcontent " id="Login">
             <h2 class="text-center">Add messages</h2>
             <div class="login-form">
-          
-              
-         
-  
+
+
+
+
               <div class="w3-input w3-border w3-margin-bottom" class="form-group">
-                  <label for="comment">Select category:</label>
-              
-                  <select class="form-control" #farmType [(ngModel)]="ocassionType">
-                      <option class="hidden" selected disabled>Select message type</option>
-    
-                      <option value="Wedding">Wedding</option>
-    
-                      <option value="Baby shower">Baby shower</option>
-    
-                      <option value="Thinking of you">Thinking of you </option>
-                      <option value="Birthday">Birthday </option>
-                      <option value="Anniversary">Anniversary </option>
-                      <option value="Graduation">Graduation </option>
-                      <option value="New-JOb">New-JOb </option>
-                      <option value="General">General </option>
-    
-    
-                      <!-- <option value="Graduation">Graduation</option>  -->
-                  </select>
-    
-  
+                <label for="comment">Select category:</label>
+
+                <select class="form-control" #farmType [(ngModel)]="ocassionType">
+                  <option class="hidden" selected disabled>Select message type</option>
+
+                  <option value="Wedding">Wedding</option>
+
+                  <option value="Baby shower">Baby shower</option>
+
+                  <option value="Thinking of you">Thinking of you </option>
+                  <option value="Birthday">Birthday </option>
+                  <option value="Anniversary">Anniversary </option>
+                  <option value="Graduation">Graduation </option>
+                  <option value="New-JOb">New-JOb </option>
+                  <option value="General">General </option>
+
+
+                  <!-- <option value="Graduation">Graduation</option>  -->
+                </select>
+
+
                 <div class="form-group">
                   <label for="comment">Add message:</label>
                   <textarea class="form-control" rows="5" id="comment" [(ngModel)]="message"></textarea>
                 </div>
-  
-            </div>
-  
-            <!-- <div>
+
+              </div>
+
+              <!-- <div>
                 <input class="form-group" type="file" accept="image/*" placeholder="Upload images*" #image 
                     (change)="insertImageForAddFarm($event)" />
             </div> -->
               <div class="form-check">
-                
+
                 <button type="submit" class="btn btn-login btn-block" (click)="addSave()">Submit</button>
               </div>
-  
+
             </div>
-         
+
           </div>
-  
-  
-  
-  
-  
-       
+
+
+
+
+
+
         </div>
-  
-  
-      
-  
+
+
+
+
       </div>
     </div>
-  
-  
-  
+
+
+
   </section>
-  
-  </body> 
+
+
+  <script>
+      // Add active class to the current button (highlight it)
+      var header = document.getElementById("myTab");
+      var tabss = header.getElementsByClassName("tabss");
+      for (var i = 0; i < tabss.length; i++) {
+        tabss[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+        });
+      }
+      </script>
+</body>
