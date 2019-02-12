@@ -466,7 +466,9 @@ addCard(card){
 
 deleteCard(id){
   return new Promise((resolve, reject) => {
-    firebase.database().ref('category/Cards/'+id).remove()
+    
+    
+    
   })
 }
 
