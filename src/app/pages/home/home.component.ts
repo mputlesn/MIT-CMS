@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   message ;
+  messageupdates ;
   ocassionType ;
  
   messageArray = [] ;
@@ -42,27 +43,43 @@ export class HomeComponent implements OnInit {
     
     
 
-    if(this.message != undefined && this.ocassionType !=undefined){
-      this.mitService.saveMessage(this.message , this.ocassionType) ;
-      this.mitService.sucess("Added Successfully ") ;
+    if(this.message == undefined && this.ocassionType == undefined){
+     this.mitService.oops("Please Enter all Details")
+   
+   
 
-    }else if(this.message != undefined){
-      this.mitService.oops("Please write the message")
-
-    }else if(this.ocassionType !=undefined){
-      this.mitService.oops("Please choose the occassion")
 
     }
     
+    else if(this.message == undefined){
+      this.mitService.oops("Please write the message")
+    
+    }else if(this.ocassionType ==undefined){
+      this.mitService.oops("Please choose the occassion")
+      
+    }
+    
     else {
-      this.mitService.oops("Please Enter all Details")
+   
+   
 
+        this.mitService.saveMessage(this.message , this.ocassionType) ;
+      this.mitService.sucess("Added Successfully ") ;
+     this.message = "" ;
+     this.ocassionType =  ''
+    this.message = undefined ;
+    this.ocassionType =  undefined ;
+
+
+   
     }
   
-    this.message = ' ' ;
-    this.ocassionType = ' '
+    
    }
 
+  
+  
+  
    birthdayMessages(){
     this.mitService.getBirthdayMessages().then((data:any)=>{
       console.log(data);
@@ -124,17 +141,7 @@ export class HomeComponent implements OnInit {
 
    delete(occassion , key , index ){
     
-
-    //  this.mitService.delete(occassion ,key).then(()=>{
-    //    console.log("success");
-       
-
-    //  }).catch((error)=>{
-    //    console.log(error);
-       
-    //  })
-     
-    //  this.messageArray.splice(index, 1)
+    this.mitService.delete(occassion ,key)
 
 
     const swalWithBootstrapButtons = Swal.mixin({
@@ -155,7 +162,7 @@ export class HomeComponent implements OnInit {
       if (result.value) {
     
 
-        this.messageArray.splice(index, 1)
+        this.messageArray.splice(index, 1) ;
          this.mitService.delete(occassion ,key).then(()=>{
        console.log("success");
        
@@ -220,7 +227,7 @@ export class HomeComponent implements OnInit {
      
      
      console.log(this.message);
-    this.mitService.update(this.occassionType , this.uniqueKey , this.message).then(()=>{
+    this.mitService.update(this.occassionType , this.uniqueKey , this.messageupdates).then(()=>{
       console.log("success");
       
 
@@ -229,7 +236,7 @@ export class HomeComponent implements OnInit {
     }) ;
 
     var update = {
-      message:this.message
+      message:this.messageupdates
     }
     this.messageArray.splice(this.index , 1 , update)
      
