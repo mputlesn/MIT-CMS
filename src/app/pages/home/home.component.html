@@ -39,11 +39,11 @@
       <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
         <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" routerLink="/home">Home</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">Add Card</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Users</a> 
-            <li class="nav-item"> <a class="nav-link" href="#">Logout</a> 
+          <li class="nav-item"><a class="nav-link" routerLink="/image">Add Card</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/users">Users</a> 
+            <li class="nav-item"> <a class="nav-link" (click)="logout()">Logout</a> 
   
           </li>
         </ul>

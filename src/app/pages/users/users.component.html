@@ -1,0 +1,133 @@
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" 
+  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+   crossorigin="anonymous">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+</head>
+         <!-- <div class="tabs">
+            <button (click)="birthdayMessages()">Birthday</button>
+            <button (click)="weddingMessages()">Wedding</button>
+            <button (click)="babyShowerMessages()">Baby shower</button>
+            <button (click)="ThinkingOfYou()">Thinking of you</button>
+            <button (click)="Anniversary()"> Anniversary</button>
+            <button (click)="NewJOb()">New-JOb</button>
+            <button (click)="General()">General</button>
+            <button (click)="test()">test</button>
+          </div> -->
+    <!-- <div  *ngFor = "let message of messageArray  ; let a =index" >
+          {{message.message}}
+
+          <button (click) ="delete( message.occasion,message.key , a)">x</button>
+          <button (click) ="update( message.occasion,message.key, message.message , a)">update</button>
+  
+        </div> -->
+<body>
+  <div class="topnav">
+    <nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top">
+      <div class="">
+      <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+        <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" routerLink="/image">Add Card</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/users">Users</a> 
+            <li class="nav-item"> <a class="nav-link" (click)="logout()">Logout</a> 
+  
+          </li>
+        </ul>
+      </div>
+      </div>   
+    </nav>
+  </div>
+
+  
+  <section class="login-block">
+  
+
+
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 banner-sec">
+          <div class="board-inner">
+              
+        <div *ngFor="let user of users">
+          <img src="{{user.proPic}}" alt="">
+          <h1>{{user.name}}</h1>
+          <h2>{{user.email}}</h2>
+          <h4>{{user.k}}</h4>
+        </div>
+                
+            </div>
+
+        <br> <br>
+            
+              
+        </div>
+
+        <div class="col-md-6 login-sec">
+          <div class="login tabcontent " id="Login">
+            <h2 class="text-center">View All Users</h2>
+            <div class="login-form">
+
+
+
+
+              
+
+             
+              <!-- <div class="form-check">
+                  <button type="submit" class="btn btn-login btn-block" (click)="getallUsers()" >View</button>
+
+                
+              </div> -->
+
+            </div>
+
+          </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+
+
+  </section>
+
+
+  <script>
+      // Add active class to the current button (highlight it)
+      var header = document.getElementById("myTab");
+      var tabss = header.getElementsByClassName("tabss");
+      for (var i = 0; i < tabss.length; i++) {
+        tabss[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+        });
+      }
+      </script>
+</body>

@@ -85,10 +85,43 @@ export class MitService {
   }
 
   signout() {
-    firebase.auth().signOut().then(function () {
-    }).catch(function (error) {
-      // An error happened.
-    });
+    return new Promise((resolve, reject)=>{
+      firebase.auth().signOut().then(function () {
+        resolve()
+      }).catch(function (error) {
+        // An error happened.
+        reject(error)
+      });
+    })
+    
+  }
+
+  getUser(){
+
+    return new Promise((resolve, reject) => {
+      firebase.database().ref('user').on('value',(data:any)=>{
+        var User = data.val() ;
+        var keys:any =Object.keys(User)
+        var UserArr = []
+ 
+        for (let i = 0; i < keys.length; i++) {
+          var  k =keys[i];
+          let obj = {
+            k:k ,
+            name:User[k].name ,
+            email:User[k].email ,
+            proPic:User[k].proPicture
+ 
+          }
+ 
+          UserArr.push(obj) ;
+          console.log(UserArr);
+ 
+ 
+        }
+        resolve(UserArr)
+      })
+    })
   }
 
 

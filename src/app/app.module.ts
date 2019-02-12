@@ -9,13 +9,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import Swal from 'sweetalert2';
 import { ImagesComponent } from './pages/images/images.component';
+import { UsersComponent } from './pages/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ImagesComponent
+    ImagesComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { ImagesComponent } from './pages/images/images.component';
       {path: '', component: LoginComponent},
       {path: 'home', component: HomeComponent},
       {path: 'image', component: ImagesComponent},
+      {path: 'users', component: UsersComponent},
     ])
   ],
   providers: [],

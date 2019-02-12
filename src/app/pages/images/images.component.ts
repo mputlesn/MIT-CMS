@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MitService } from '../../provider/mit.service';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 declare var firebase;
 
@@ -15,11 +16,17 @@ export class ImagesComponent implements OnInit {
 
   cards = []
 
-  constructor(private mit: MitService) { }
+  constructor(private mit: MitService, private router: Router) { }
 
   ngOnInit() {
     this.getAllCards()
     
+  }
+
+  logout(){
+    this.mit.signout().then(()=>{
+      this.router.navigateByUrl('/');
+    })
   }
 
   getAllCards(){

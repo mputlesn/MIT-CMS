@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MitService} from '../../provider/mit.service'
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
   messageupdate ;
   index ;
 
-  constructor(public mitService:MitService) {
+  constructor(public mitService:MitService, private router: Router) {
 
 
    }
@@ -27,6 +28,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.birthdayMessages()
    
+  }
+
+  logout(){
+    this.mitService.signout().then(()=>{
+      this.router.navigateByUrl('/');
+    })
   }
 
   addSave(){
