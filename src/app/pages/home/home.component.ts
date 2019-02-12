@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MitService} from '../../provider/mit.service'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -51,7 +52,8 @@ export class HomeComponent implements OnInit {
 
     }
   
-
+    this.message = ' ' ;
+    this.occassionType = ' '
    }
 
    birthdayMessages(){
@@ -114,12 +116,40 @@ export class HomeComponent implements OnInit {
    }
 
    delete(occassion , key , index ){
-     console.log(key);
-     console.log(occassion);
-     console.log(index);
-     
+    
 
-     this.mitService.delete(occassion ,key).then(()=>{
+    //  this.mitService.delete(occassion ,key).then(()=>{
+    //    console.log("success");
+       
+
+    //  }).catch((error)=>{
+    //    console.log(error);
+       
+    //  })
+     
+    //  this.messageArray.splice(index, 1)
+
+
+    const swalWithBootstrapButtons = Swal.mixin({
+      confirmButtonClass: 'btn btn-success',
+      cancelButtonClass: 'btn btn-danger',
+      buttonsStyling: false,
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+    
+
+        this.messageArray.splice(index, 1)
+         this.mitService.delete(occassion ,key).then(()=>{
        console.log("success");
        
 
@@ -127,8 +157,24 @@ export class HomeComponent implements OnInit {
        console.log(error);
        
      })
-     
-     this.messageArray.splice(index, 1)
+        
+        swalWithBootstrapButtons.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      } else if (
+        // Read more about handling dismissals
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelled',
+          'Your file is safe :)',
+          'error'
+        )
+      }
+      
+    })
 
    }
 
