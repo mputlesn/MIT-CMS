@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
     }
   
     this.message = ' ' ;
-    this.occassionType = ' '
+    this.ocassionType = ' '
    }
 
    birthdayMessages(){
