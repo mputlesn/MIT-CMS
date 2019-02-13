@@ -33,24 +33,24 @@
   
         </div> -->
 <body>
-  <div class="topnav">
-    <nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top">
-      <div class="">
-      <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
-        <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
-          <li class="nav-item active">
-            <a class="nav-link" routerLink="/home">Home</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" routerLink="/image">Add Card</a></li>
-          <li class="nav-item"> <a class="nav-link" routerLink="/users">Users</a> 
-            <li class="nav-item"> <a class="nav-link" (click)="logout()">Logout</a> 
-  
-          </li>
-        </ul>
+    <div class="topnav">
+        <nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top">
+          <div class="">
+          <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+            <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="/home">Home</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" routerLink="/image">Add Card</a></li>
+              <li class="nav-item"> <a class="nav-link" routerLink="/users">Users</a> 
+                <li class="nav-item"> <a class="nav-link" (click)="logout()">Logout</a> 
+      
+              </li>
+            </ul>
+          </div>
+          </div>   
+        </nav>
       </div>
-      </div>   
-    </nav>
-  </div>
 
   
   <section class="login-block">
@@ -62,27 +62,42 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-6 banner-sec">
+        <div class="col-md-12 banner-sec">
           <div class="board-inner">
-              
-        <div *ngFor="let user of users">
+              <h2 class="text-center">Users</h2>  
+        <!-- <div *ngFor="let user of users">
           <img src="{{user.proPic}}" alt="">
           <h1>{{user.name}}</h1>
           <h2>{{user.email}}</h2>
           <h4>{{user.k}}</h4>
-        </div>
-                
+        </div> -->
+        <!-- <div class="container">
+            <div class="row"> -->
+              <div class="col-xs-2" *ngFor="let user of users">
+               
+                  <div class="user">
+                          <img class="profile-img" src="{{user.proPic}}" alt="">
+                  <h3 class="lead" align='center'>
+                 <b>{{user.name}}</b>     
+                  </h3>
+                  <!-- <h2 class="lead" align='center'>{{user.email}}</h2>
+                  <h4 class="lead" align='center'>{{user.k}}</h4> -->
+                </div>
+              </div>
+  
+            <!-- </div>
+          </div>  -->
             </div>
 
-        <br> <br>
+  
             
               
         </div>
 
-        <div class="col-md-6 login-sec">
+        <!-- <div class="col-md-6 login-sec">
           <div class="login tabcontent " id="Login">
             <h2 class="text-center">View All Users</h2>
-            <div class="login-form">
+            <div class="login-form"> -->
 
 
 
@@ -96,7 +111,7 @@
                 
               </div> -->
 
-            </div>
+            <!-- </div>
 
           </div>
 
@@ -105,7 +120,7 @@
 
 
 
-        </div>
+        </div> -->
 
 
 

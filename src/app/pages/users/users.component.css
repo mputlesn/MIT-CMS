@@ -164,7 +164,7 @@ img{
     color: white;
   }
   .active, .tabss :hover {
-    background-color: rgb(201, 193, 193);
+    /* background-color: rgb(201, 193, 193); */
     color: white;
   }
 
@@ -380,7 +380,7 @@ li.active span.round-tabs.eight{
 }
 
 .nav-tabs > li.active > a span.round-tabs{
-    background: #fafafa;
+    /* background: #fafafa; */
 }
 .nav-tabs > li {
     width: 12.5%;
@@ -584,21 +584,7 @@ span.psw {
   select.form-control:not([size]):not([multiple]) {
     height: calc(3.25rem + 2px);
 }
-.topnav{
-    height: 10%;
-    width: 100%;
-    background-color: transparent;
-    /* border: 2px solid white; */
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white
-  }
-  @import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 body{
     
     background-color:#ff666f;
@@ -610,24 +596,44 @@ a{
     color:#fff !important;
     
 }
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
 .nav-item {
     font-family: Century Gothic;
-    margin: 0 auto;
-    padding: 2em 8em;
-    text-align: center;
+    /* margin: 0 auto; */
+    padding: 0em 0em;
+    text-align: left;
 }
 .nav-item a {
     color: #FFF;
     text-decoration: none;
-    font: 35px Century Gothic;
-    margin: 0px 20px;
+    font: 20px Century Gothic;
+    /* margin: 0px 20px;
+    padding:10px 10px; */
     padding:10px 10px;
     position: relative;
     z-index: 0;
-    font-weight: 900;
+    font-weight: 600;
    
 }
-
+.topnav{
+    height: 10%;
+    width: 100%;
+    background-color: transparent;
+    /* border: 2px solid white; */
+    position: absolute;
+    top: 10%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white
+  }
 
 /* Top & Bottom Borders Out */
 .topBotomBordersOut a:before, .topBotomBordersOut a:after {
@@ -652,4 +658,55 @@ a{
 .topBotomBordersOut a:hover:before, .topBotomBordersOut a:hover:after {
     opacity: 2;
     transform: translateY(0px);
+}
+.profile-img
+{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 5%;
+}
+
+.user {
+    padding:0 10px 10px;
+    min-height:150px;
+    height:auto;
+    margin: 10px 0;
+}
+.col-xs-2 {
+    width: 15.66666667%;
+    width: 250px;
+    height: 260px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, rgb(245, 245, 245), rgba(222, 98, 98, 0.4)); 
+    /* background-color: #DE6262; */
+    /* padding:8px; */
+    margin: 8px; 
+}
+.lead{
+    /* margin: 0 auto 10px; */
+    display: block;
+    width: 200px;
+    height: 100px;
+    color: white
+}
+h2{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 30px;
+    color: #DE6262;
+
+}
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 50vh;
+    z-index: 1030;
 }
