@@ -29,34 +29,53 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/users">Users</a>
-              <li class="nav-item">
-                <a class="nav-link" (click)="logout()">Logout</a>
+            <li class="nav-item">
+              <a class="nav-link" (click)="logout()">Logout</a>
 
-              </li>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
   </div>
-
   <section class="login-block">
     <div class="container">
       <div class="row">
         <div class="col-md-12 banner-sec">
           <div class="board-inner">
             <h2 class="text-center">Our Users</h2>
+            <div class="col-md-4" *ngFor="let user of users">
+                <div class="card card-profile">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img" src="{{user.proPic}}" onerror="if (this.src != '../../../assets/download.png') this.src = '../../../assets/download.png';">
 
-            <div class="col-xs-2" *ngFor="let user of users">
-                <img class="imgdisplay" [src]="url" *ngIf="url != null" width="500" height="500">
-    <img class="profile-img" src="{{user.proPic}}" alt="">
-     <h3 class="username" align='center'>
-                  <b>{{user.name}}</b>
-                </h3>
-              <!-- <div class="user">
-            
-               
+                            <div class="card-title">
+                                {{user.name}}
+                            </div>
+                        </a>
+                    <div class="colored-shadow" style="background-image: url('https://i.ytimg.com/vi/7xWxpunlZ2w/maxresdefault.jpg');opacity: 1;"></div></div>
+                    <div class="card-body ">
+                        <h6 class="card-category text-info">{{user.email}}</h6>
 
-              </div> -->
+                        <p class="card-description">
+                           {{user.k}}
+                        </p>
+
+
+                    </div>
+                    <div class="card-footer justify-content-center">
+                        <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                        <a href="#pablo" class="btn btn-just-icon btn-link btn-instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
           </div>
