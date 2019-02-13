@@ -3,6 +3,8 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+  <link rel="stylesheet" href="/lib/view-bigimg.css">
+  <script src="/lib/view-bigimg.js"></script>
 
 
 
@@ -55,7 +57,7 @@
                
 
                 <img class="imgdisplay" [src]="url" *ngIf="url != null" width="500" height="500"><br><br>
-                <input type="file" #image accept="image/png, image/jpeg" (change)="insertImage($event)"><br><br>
+                <input class="Upload" type="file" #image accept="image/png, image/jpeg" (change)="insertImage($event)"><br><br>
                 
 
           </div>
@@ -82,7 +84,10 @@
     </div>
   </div>
 
+<script>
+  $(".row").imageBox();
 
+</script>
 
 </section>
 <footer>

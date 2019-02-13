@@ -42,7 +42,7 @@ background-repeat: no-repeat;
     }
 
 .container{
-    background:#fff;
+    background:rgb(238, 232, 232);
      border-radius: 10px; 
      box-shadow:15px 20px 0px rgba(0,0,0,0.1);
     }
@@ -114,7 +114,7 @@ background-repeat: no-repeat;
     content:" ";
      width:100px; 
      height:5px; 
-     background:#FFF;
+     background: linear-gradient(to bottom, rgb(180, 36, 36), rgb(224, 224, 224));   
       display:block;
        margin-top:20px;
         border-radius:3px
@@ -661,39 +661,49 @@ a{
 }
 .profile-img
 {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 10px;
-    display: block;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 5%;
-}
 
-.user {
-    padding:0 10px 10px;
-    min-height:150px;
-    height:auto;
-    margin: 10px 0;
-}
-.col-xs-2 {
-    width: 15.66666667%;
+
+    
     width: 250px;
     height: 260px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
-    background: linear-gradient(to bottom, rgb(245, 245, 245), rgba(222, 98, 98, 0.4)); 
-    /* background-color: #DE6262; */
-    /* padding:8px; */
-    margin: 8px; 
-}
-.lead{
-    /* margin: 0 auto 10px; */
+    /* background: linear-gradient(to bottom, rgb(245, 245, 245), rgba(222, 98, 98, 0.4));  */
+    /* margin: 8px;  */
+    /* width: 250px;
+    height: 260px;
+    margin: 0 auto 10px;
     display: block;
-    width: 200px;
-    height: 100px;
-    color: white
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 5%; */
+}
+
+/* .user {
+    padding:0 10px 10px;
+    min-height:150px;
+    height:auto;
+    margin: 10px 0;
+} */
+.col-xs-2 {
+
+    width: 250px;
+    height: 250px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+  
+    /* background: linear-gradient(to bottom, rgb(245, 245, 245), rgba(222, 98, 98, 0.4));  */
+    margin: 12px; 
+}
+.username{
+    margin: 0% auto;
+    display: block;
+    color: white;
+    position: relative;
+    top: -12%;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.548);
 }
 h2{
     margin-top: 10px;
@@ -709,4 +719,10 @@ h2{
     right: 0;
     left: 50vh;
     z-index: 1030;
+}
+.Upload{
+    margin: 0% auto;
+    display: block;
+    text-align: center;
+    padding-left: 20%;
 }
