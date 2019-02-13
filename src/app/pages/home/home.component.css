@@ -21,6 +21,14 @@ background-repeat: no-repeat;
     margin-bottom: 3.5rem;
   }
 
+  #msg{
+      margin: 3%
+  }
+
+  /* .btn-update{
+
+  } */
+
   
   .form-control-placeholder {
     position: absolute;
@@ -28,6 +36,25 @@ background-repeat: no-repeat;
     padding: 7px 0 10px 13px;
     transition: all 200ms;
     opacity: 0.5;
+  }
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #DE6262; 
+    border-radius: 10px;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DE6262;
   }
 .banner-sec{
     /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(255, 186, 186, 0) 30%, rgba(255, 186, 186, 0.65) 100%), url('../../../assets/birthday.jpeg') no-repeat; */
@@ -234,7 +261,7 @@ img{
 
   .btn-update  .btn-update :hover,
   .btn-update :focus  {
-    
+        
        color: white;
 
   }
@@ -242,10 +269,11 @@ img{
     float: right;
     background-color: white; 
        color: #000;
-       width: 30%;
+       width: 25%;
        position: relative;
        left: 65%;
-       height: 50px;
+       height: 20px;
+       
      
 
 

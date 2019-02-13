@@ -475,7 +475,7 @@ getGeneralMessage(){
  
         resolve(this.general);
  
-         
+          
    }
        }else{
         

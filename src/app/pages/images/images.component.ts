@@ -20,7 +20,26 @@ export class ImagesComponent implements OnInit {
 
   ngOnInit() {
     this.getAllCards()
+    let timerInterval
+    Swal.fire({
+     title: 'Loading',
+     html: 'Please wait, still loading',
+     timer: 2000,
+     onBeforeOpen: () => {
+       Swal.showLoading()
     
+     },
+     onClose: () => {
+       clearInterval(timerInterval)
+     }
+    }).then((result) => {
+     if (
+       // Read more about handling dismissals
+       result.dismiss === Swal.DismissReason.timer
+     ) {
+       console.log('I was closed by the timer')
+     }
+    })
   }
 
   logout(){
