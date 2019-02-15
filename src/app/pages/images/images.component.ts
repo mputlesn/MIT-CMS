@@ -12,7 +12,7 @@ declare var firebase;
 })
 export class ImagesComponent implements OnInit {
 
-  url ='http://www.dealnetcapital.com/files/2014/10/blank-profile.png';
+  url ='../../../assets/image-holder-icon-614x460.png';
 
   cards = []
 
@@ -50,14 +50,10 @@ export class ImagesComponent implements OnInit {
 
   getAllCards(){
     this.mit.getAllCards().then((data:any)=>{
-      // for (let i = 0; i < data.length; i++) {
-      //   this.cards = data[i].card;
-      //   console.log(this.cards);
-        
-      // }
-
+      
       this.cards = data
       console.log(this.cards);
+      //this.getAllCards()
      
       
     })
@@ -82,6 +78,9 @@ export class ImagesComponent implements OnInit {
     this.mit.addCard(this.url).then(()=>{
       this.ngOnInit()
       this.mit.sucess("Card Uploaded Successfully")
+      this.ngOnInit()
+      console.log("refreshed");
+      
     }).catch((error)=>{
       this.mit.oops("Oops something went wrong please try again")
     })
