@@ -42,9 +42,9 @@ background-repeat: no-repeat;
     }
 
 .container{
-    background:rgb(238, 232, 232);
+    background:rgb(236, 236, 236);
      border-radius: 10px; 
-     box-shadow:15px 20px 0px rgba(0,0,0,0.1);
+     /* box-shadow:15px 20px 0px rgba(0,0,0,0.1); */
     }
 
 
@@ -545,10 +545,10 @@ button:hover {
   margin: 24px 0 12px 0;
 }
 
-img.avatar {
-  width: 40%;
+/* img.avatar {
+  width: 4%;
   border-radius: 50%;
-}
+} */
 
 .container {
   padding: 16px;
@@ -676,7 +676,7 @@ a{
 .card {
     border: 0;
     margin-bottom: 30px;
-    margin-top: 100px;
+    margin-top: 40px;
     border-radius: 6px !important;
     color: rgba(0,0,0,.87);
     background: #fff;
@@ -712,27 +712,28 @@ a{
 
 .card .card-header.card-header-image a {
     display: block;
+    border: 0;
 }
 
 .card .card-header.card-header-image img {
-    width: 100%;
+    width: 90%;
     height: 215px;
     border-radius: 6px;
     pointer-events: none;
-    box-shadow: 0 5px 15px -8px rgba(0,0,0,.24), 0 8px 10px -5px rgba(0,0,0,.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 .card .card-header.card-header-image .colored-shadow {
-    transform: scale(.94);
+    /* transform: scale(.94);
     top: 12px;
-    filter: blur(12px);
+    filter: blur(1px);
     position: absolute;
-    width: 100%;
+    width: 90%;
     height: 100%;
     background-size: cover;
     z-index: -1;
     transition: opacity .45s;
-    opacity: 1;
+    opacity: 1; */
 }
 
 .card .card-header.card-header-image .card-title {
@@ -820,7 +821,7 @@ h2:after{
     border-radius: 50%;
     overflow: hidden;
     padding: 0;
-    box-shadow: 0 16px 38px -12px rgba(0,0,0,.56), 0 4px 25px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+    /* box-shadow: 0 16px 38px -12px rgba(0,0,0,.56), 0 4px 25px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2); */
 }
 
 .card-profile .card-avatar img{
@@ -861,4 +862,14 @@ h2{
     display: block;
     text-align: center;
     padding-left: 20%;
+}
+.col-md-4{
+    margin-bottom: 0%;
+
+}
+.card-header {
+   
+    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-bottom: 0px solid rgba(0,0,0,.125);
 }
