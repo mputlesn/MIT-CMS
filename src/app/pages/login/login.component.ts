@@ -13,6 +13,10 @@ export class LoginComponent implements OnInit {
   track = 1
   loginEmail ;
   loginPassword ;
+  registerEmail;
+  registerPassword;
+  registerUsername;
+
 
   constructor(private mitDB: MitService, private router: Router) { }
 

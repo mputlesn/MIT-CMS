@@ -138,6 +138,13 @@ export class HomeComponent implements OnInit {
       })
 
    }
+  graduationMessages(){
+    this.mitService.getGraduationMessages().then((data:any)=>{
+      console.log(data);
+      this.messageArray = data ;
+      })
+
+  }
 
    delete(occassion , key , index ){
     
