@@ -11,6 +11,7 @@ declare var firebase;
   styleUrls: ['./images.component.css']
 })
 export class ImagesComponent implements OnInit {
+ seltab = 'farms'
 
   url ='../../../assets/image-holder-icon-614x460.png';
 
@@ -19,6 +20,7 @@ export class ImagesComponent implements OnInit {
   constructor(private mit: MitService, private router: Router) { }
 
   ngOnInit() {
+  
     this.getAllCards()
     let timerInterval
     Swal.fire({
@@ -75,6 +77,7 @@ export class ImagesComponent implements OnInit {
   }
 
   save(){
+    
     this.mit.addCard(this.url).then(()=>{
       this.ngOnInit()
       this.mit.sucess("Card Uploaded Successfully")

@@ -39,7 +39,7 @@
       <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
         <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
           <li class="nav-item ">
-            <a class="nav-link" routerLink="/home">Home</a>
+            <a class="nav-link" routerLink="/home" id="isActive">Home</a>
           </li>
           <li class="nav-item"><a class="nav-link" routerLink="/image">Add Card</a></li>
           <li class="nav-item"> <a class="nav-link" routerLink="/users">Users</a> 
@@ -80,7 +80,8 @@
         <div class="col-md-6 banner-sec">
           <div class="board-inner">
               <ul class="nav nav-tabs" id="myTab">
-                <li class=" tabss"  (click)="birthdayMessages()">
+                  <!-- <button id="target1" class="tablinks  " [class.active]="seltab == 'farms'" style="text-align: center;" (click)="showAddFarms(); seltab = 'farms'">All Farms</button> -->
+                <li class=" tabss"   [class.active]="seltab == 'farms'" (click)="birthdayMessages(); seltab = 'farms' ">
                   <a  data-toggle="tab" title="Birthday">
                     <span class="round-tabs one">
                         <i class="fa fa-birthday-cake" style="font-size: xx-large; color: #cf75ae" ></i>
@@ -89,21 +90,21 @@
                   </a>
                 </li>
         
-                <li  class="tabss"   (click)="graduationMessages()" >
+                <li  class="tabss"    [class.active]="seltab == 'Graduation'" (click)="graduationMessages(); seltab = 'Graduation'">
                   <a data-toggle="tab" title="Graduation">
-                    <span class="round-tabs two">
+                    <span  class="round-tabs two" >
                         <i class="fa fa-user-graduate" style="font-size: xx-large" ></i>
                     </span>
                   </a>
                 </li>
-                <li  class="tabss"   (click)="weddingMessages()" >
+                <li  class="tabss" [class.active]="seltab == 'Wedding'"  (click)="weddingMessages(); seltab = 'Wedding'" >
                     <a data-toggle="tab" title="Wedding">
                       <span class="round-tabs three">
                           <i class="fa fa-ring" style="font-size: xx-large" ></i>
                       </span>
                     </a>
                   </li>
-                <li   class="tabss" (click)="babyShowerMessages()" >
+                <li   class="tabss"  [class.active]="seltab == 'Baby'" (click)="babyShowerMessages(); seltab = 'Baby'" >
                   <a data-toggle="tab" title=" Baby Shower">
                     <span class="round-tabs four">
                         <i class="fa fa-baby" style="font-size: xx-large" ></i>
@@ -111,7 +112,7 @@
                   </a>
                 </li>
         
-                <li  class="tabss"  (click)="ThinkingOfYou()" >
+                <li  class="tabss" [class.active]="seltab == 'Thinking'" (click)="ThinkingOfYou(); seltab = 'Thinking'" >
                   <a data-toggle="tab" title="Thinking Of You">
                     <span class="round-tabs five">
                         <i class="fa fa-comments" style="font-size: xx-large" ></i>
@@ -119,21 +120,21 @@
                   </a>
                 </li>
         
-                <li   class="tabss"  (click)="Anniversary()" >
+                <li   class="tabss" [class.active]="seltab == 'Anniversary'"  (click)="Anniversary(); seltab = 'Anniversary'" >
                   <a data-toggle="tab" title="Anniversary">
                     <span class="round-tabs six">
                         <i class="fa fa-gift" style="font-size: xx-large" ></i>
                     </span>
                   </a>
                 </li>
-                <li  class="tabss"   (click)="NewJOb()" >
+                <li  class="tabss"   [class.active]="seltab == 'NewJOb'" (click)="NewJOb(); seltab = 'NewJOb'" >
                     <a data-toggle="tab" title="New Job">
                       <span class="round-tabs seven">
                            <i class="fa fa-briefcase" style="font-size: xx-large" ></i>
                       </span>
                     </a>
                   </li>
-                  <li  class="tabss"  (click)="General()" >
+                  <li  class="tabss"   [class.active]="seltab == 'general'" (click)="General(); seltab = 'general'" >
                       <a data-toggle="tab" title="General">
                         <span class="round-tabs eight">
                             <i class="fa fa-users" style="font-size: xx-large" ></i>
@@ -183,7 +184,7 @@
                   <option value="Birthday">Birthday </option>
                   <option value="Anniversary">Anniversary </option>
                   <option value="Graduation">Graduation </option>
-                  <option value="New-JOb">New-JOb </option>
+                  <option value="New-JOb">New jOb </option>
                   <option value="General">General </option>
 
 

@@ -5,10 +5,12 @@ background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);
 background: linear-gradient(to bottom, #FFB88C, #DE6262); 
 float:left;
 width:100%;
-height: 100vh;
-padding : 200px 0;
+/* height: 100vh; */
+padding :200px;
 background-size: cover;
 background-repeat: no-repeat;
+position: fixed;
+
 }
 .form-control:focus + .form-control-placeholder,
 .form-control:valid + .form-control-placeholder {
@@ -91,7 +93,7 @@ background-repeat: no-repeat;
     border-radius: 8px
 }
 .imgdisplay{
-height: 220px;
+/* height: 220px; */
 width: 75%;
 position: relative;
 top: 100px;
@@ -223,8 +225,9 @@ transform: translate(-50%, -50%)
   
 
   .tab button.active {
-    background-color: rgba(204, 204, 204, 0);
+    background-color: rgba(204, 204, 204, 0.63);
   }
+
 
   #register{
       display:none;
@@ -289,6 +292,9 @@ a{
     color:#fff !important;
     
 }
+.nav{
+  float: right;
+}
 .navbar {
     position: relative;
     min-height: 50px;
@@ -314,18 +320,23 @@ a{
    
 }
 .topnav{
-    height: 10%;
+
     width: 100%;
     background-color: transparent;
     /* border: 2px solid white; */
-    position: absolute;
-    top: 10%;
-    left: 80%;
-    transform: translate(-50%, -50%);
+    /* position: fixed; */
+    /* top: 10%; */
+    /* left: 80%; */
+    /* transform: translate(-50%, -50%); */
     display: flex;
+    float: left;
     justify-content: center;
     align-items: center;
-    color: white
+    color: white;
+    padding-left: 1200px;
+    padding-top: 3%;
+    /* top: 10%;
+    left: 80PX; */
   }
 
 /* Top & Bottom Borders Out */
@@ -351,6 +362,12 @@ a{
 .topBotomBordersOut a:hover:before, .topBotomBordersOut a:hover:after {
     opacity: 2;
     transform: translateY(0px);
+}
+
+#isActive{
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+
 }
 
 

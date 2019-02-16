@@ -873,3 +873,10 @@ h2{
     background-color: rgba(255, 255, 255, 0.03);
     border-bottom: 0px solid rgba(0,0,0,.125);
 }
+
+#isActive{
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  
+  }
+  

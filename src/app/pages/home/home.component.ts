@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  seltab = 'farms'
   message ;
   messageupdates ;
   ocassionType ;
@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.birthdayMessages()
+    this.seltab = 'farms'
    
   }
 
